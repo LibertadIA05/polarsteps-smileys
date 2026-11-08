@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Smileys Polarsteps</title>
+  <meta name="description" content="Ajoute les smileys dans tes textes Polarsteps, sans toucher à un seul mot.">
+  <meta name="theme-color" content="#FFF7F0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14110F" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Smileys">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="entete">
+      <h1>Smileys Polarsteps</h1>
+      <p>Colle ton texte du jour, Claude ajoute les smileys. Pas un mot ne change.</p>
+    </header>
+
+    <section id="cle-carte" class="carte" hidden>
+      <h2>Ta clé Claude</h2>
+      <p>À saisir une seule fois. Elle reste uniquement sur ce téléphone.</p>
+      <input id="cle-champ" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="sk-ant-…">
+      <p id="cle-erreur" class="erreur" role="alert"></p>
+      <button id="cle-ok" class="bouton principal">Enregistrer</button>
+    </section>
+
+    <section id="travail">
+      <label class="etiquette" for="source">Ton texte</label>
+      <textarea id="source" rows="10" placeholder="Colle ici ton texte du jour…"></textarea>
+      <div class="ligne">
+        <span id="compteur" class="discret"></span>
+      </div>
+      <button id="go" class="bouton principal grand" disabled>Ajouter les smileys ✨</button>
+
+      <section id="resultat" hidden>
+        <p id="statut" class="statut" role="status" aria-live="polite"></p>
+        <label class="etiquette" for="sortie">Avec les smileys (tu peux retoucher)</label>
+        <textarea id="sortie" rows="14"></textarea>
+        <div class="actions">
+          <button id="copier" class="bouton principal">Copier</button>
+          <button id="refaire" class="bouton">Refaire</button>
+        </div>
+        <button id="nouveau" class="bouton lien">Nouveau texte</button>
+      </section>
+    </section>
+
+    <footer id="reglages" class="pied">
+      <button id="changer-cle" class="bouton lien">Changer de clé</button>
+    </footer>
+  </main>
+
+  <noscript>Active JavaScript pour utiliser l'application.</noscript>
+  <script src="core.js"></script>
+  <script src="consigne.js"></script>
+  <script src="exemples.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
